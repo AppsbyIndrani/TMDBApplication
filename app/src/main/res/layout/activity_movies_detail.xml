@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MoviesDetailActivity">
+
+
+  <com.github.florent37.diagonallayout.DiagonalLayout
+      android:layout_width="match_parent"
+      android:layout_height="310dp"
+      android:id="@+id/dlMoviePic"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:diagonal_position="bottom"
+      app:diagonal_angle="15"
+      app:diagonal_direction="left"
+      android:elevation="20dp">
+
+      <com.flaviofaria.kenburnsview.KenBurnsView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="centerCrop"
+          android:id="@+id/kvMovieImage"
+          android:src="@drawable/login_photo"
+          />
+
+  </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:id="@+id/cdMdMovieImg"
+        app:cardElevation="25dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dlMoviePic"
+        app:layout_constraintBottom_toBottomOf="@id/dlMoviePic"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="165dp"
+                android:scaleType="fitXY"
+                android:id="@+id/imgMdMoviePoster"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_launcher_background"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cdMdMovieImg"
+        app:layout_constraintTop_toBottomOf="@id/dlMoviePic"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="6dp"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="JOKER the heroinegghhfddgh hgg hhhnn"
+        android:id="@+id/txtMdMovieName"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:id="@+id/txtMdGenres"
+        android:layout_marginTop="6dp"
+        tools:text="Action.thriller,romance,comedy,ghhggf,jjjjjjjjjj,hgfdfgfg,kkl"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="@id/txtMdMovieName"
+        app:layout_constraintTop_toBottomOf="@id/txtMdMovieName"
+        app:layout_constraintStart_toStartOf="@id/txtMdMovieName"/>
+
+    <RatingBar
+        android:id="@+id/rbMdRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:progressTint="@color/golden"
+        android:stepSize="0.5"
+        android:rating="4.5"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMdGenres"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="13sp"
+        android:text="7.2"
+        android:layout_marginStart="2dp"
+        android:id="@+id/txtMdRating"
+        app:layout_constraintTop_toTopOf="@id/rbMdRating"
+        app:layout_constraintBottom_toBottomOf="@id/rbMdRating"
+        app:layout_constraintStart_toEndOf="@id/rbMdRating"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="13sp"
+        android:text="/10"
+        android:id="@+id/txtMdRatingTen"
+        app:layout_constraintTop_toTopOf="@id/txtMdRating"
+        app:layout_constraintBottom_toBottomOf="@id/txtMdRating"
+        app:layout_constraintStart_toEndOf="@id/txtMdRating"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/txtMovieDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/alice"
+        android:padding="2dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rbMdRating"
+        tools:text="ggh ghhg hghh ghhg hhh" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtMovieDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Release Date :"
+        android:id="@+id/txtReleaseDateText"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtMovieDetail"
+        app:layout_constraintStart_toEndOf="@id/txtReleaseDateText"
+        android:text="2020-5-22"
+        android:id="@+id/txtReleaseDate"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtReleaseDateText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Runtime :"
+        android:id="@+id/txtRunTimeText"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtReleaseDateText"
+        app:layout_constraintStart_toEndOf="@id/txtRunTimeText"
+        android:text="123"
+        android:id="@+id/txtRunTime"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtRunTimeText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Cast"
+        android:id="@+id/txtCastText"
+        android:padding="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/rvMovieCastDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtCastText"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
